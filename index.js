@@ -8,7 +8,7 @@ app.set('view engine','ejs');
 
 
 app.get('/', (request, response) => {
-
+    
     const { quantity, type, page } = request.query;
     response.render('index', { quantity, type, page });
 

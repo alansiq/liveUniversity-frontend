@@ -30,7 +30,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
 }
 
-p, span, small {
+p, span, small, label {
     color: var(--black);
     font-family: var(--paragraphFont);
 }
@@ -46,6 +46,16 @@ body {
     grid-template-rows: 1fr;
 
     grid-template-areas: 'nav main main main main main';
+}
+
+input, select, option {
+    margin-top: 4px;
+    height: 40px;
+    padding: 8px;
+}
+
+h2 + form {
+    margin-top: 16px;
 }
 
 .navigation { 
@@ -99,7 +109,7 @@ body {
 
 .submenu {
     position: absolute;
-    background: var(--white);
+    background: #F0F0F0;
 
     display: flex;
     flex-direction: column;
@@ -247,3 +257,4 @@ body {
 .main_pagination__left:hover {
     background: linear-gradient(90deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
 }
+

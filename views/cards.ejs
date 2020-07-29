@@ -3,8 +3,8 @@
         amountOfCards.push(i);
     }
 
-let currentPage = page
-let rowsPerPage = 3 
+let currentPage = page;
+let rowsPerPage = 3;
 
 let start = rowsPerPage * currentPage;
 let end = start + rowsPerPage;
@@ -12,8 +12,9 @@ let paginatedItems = amountOfCards.slice(start, end);
 
 %>
 
-<div class="main_pagination main_pagination__left"><img class="main_pagination__chevron"
-        src="/public/assets/chevron.svg" alt="Previous page"></div>
+<div class="main_pagination main_pagination__left">
+    <img class="main_pagination__chevron" src="/public/assets/chevron.svg" alt="Previous page">
+</div>
 
 <div class="main_content">
 
@@ -22,11 +23,11 @@ let paginatedItems = amountOfCards.slice(start, end);
     %>
 
     <div class="main_content_card">
-        <div class="main_content_card_id">
+        <div class="main_content_card_id" style="background-color: <%- type === 'A' ? '#8E2694' : '#0CB9C1' -%>">
             <p><%- item + 1 -%></p>
         </div>
         <div class="main_content_card_info">
-            <span>This is Item<strong></strong> <%- type -%><%- item + 1 -%></span>
+            <span>This is Item<strong> <%- type -%><%- item + 1 -%></strong></span>
             <small>Item: <%- (item+1) -%> of <%- amountOfCards.length -%></small>
         </div>
     </div>
@@ -35,7 +36,7 @@ let paginatedItems = amountOfCards.slice(start, end);
 
 </div>
 
-<div class="main_pagination main_pagination__right"><img class="main_pagination__chevron"
-        src="/public/assets/chevron.svg" alt="Next page"></div>
+<div class="main_pagination main_pagination__right">
+    <img class="main_pagination__chevron" src="/public/assets/chevron.svg" alt="Next page">
+</div>
 
-<script src="/public/js/pagination.js"></script>

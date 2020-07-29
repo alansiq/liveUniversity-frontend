@@ -16,7 +16,7 @@
         <img class="navigation__logo" src="/public/assets/liveu.png" alt="Live University Logo">
 
         <ul class="navigation_ul">
-            <li class="navigation_link navigation_link__expand">Expand submenu</li>
+            <li class="navigation_link navigation_link__expand" role="button"><span>Expand submenu</span></li>
             <li class="navigation_link navigation_link__quantity">
                 <form id="myForm" onsubmit="event.preventDefault()">
                     <label for="number">Item quantity:</label>
@@ -51,12 +51,9 @@
     </nav>
 
     <main class="main">
-
-
         <%- include('cards.ejs',  { quantity, type } );  -%>
-
-
     </main>
+
     <script src="/public/js/main.js"></script>
 </body>
 
