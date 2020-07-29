@@ -45,13 +45,21 @@ numberInput.addEventListener("change", function() {
 
 // Event listener to capture change on Type select box - and add it to query params
 dropdownInput.addEventListener("change", function() {
+    if (!numberInput.value) {
+        numberInput.classList.add('error');
+        return
+    } else {
+        numberInput.classList.remove('error');
+    }
     location.replace(`?quantity=${numberInput.value}&type=${dropdownInput.value}&page=0`);
+    
 });
 
 // Event listeners to capture next or previous page click
 nextPage.addEventListener("click", function() {
     // Validate if there's a next page
     if (pageNumber >= (Math.ceil(numberInput.value / 3) -1)) {
+        
         location.replace(`?quantity=${numberInput.value}&type=${dropdownInput.value}&page=${0}`);
         return
     }
@@ -77,3 +85,4 @@ previousPage.addEventListener("click", function() {
 
     location.replace(`?quantity=${numberInput.value}&type=${dropdownInput.value}&page=${pageNumber}`);
 });
+

@@ -58,6 +58,10 @@ h2 + form {
     margin-top: 16px;
 }
 
+.error {
+    border: red 2px solid;
+}
+
 .navigation { 
     position: relative;
     grid-area: nav;
