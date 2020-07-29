@@ -4,7 +4,6 @@ const app = express();
 
 
 app.use('/public',express.static(path.join(__dirname,'static')));
-app.use(express.json());
 app.set('view engine','ejs');
 
 
