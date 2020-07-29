@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "now-build": "node ./index.js"
+    "now-build": "node ./index.js",
+    "build": "node ./index.js"
   },
   "keywords": [],
   "author": "",
