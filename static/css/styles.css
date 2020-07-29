@@ -1,0 +1,249 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Poppins:wght@100;400;600&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+
+:root {
+
+    --headingFont: 'Poppins', sans-serif; 
+    --paragraphFont: 'Montserrat', sans-serif;
+
+    --purple: #8E2694;
+
+    --black: #222;
+    --black-2: #1c1c24;
+    --black-3: #444;
+
+    --white: #fff;
+    --white-2: #e3e3e3;
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--black);
+    font-family: var(--headingFont);
+    font-weight: bold;
+}
+
+p, span, small {
+    color: var(--black);
+    font-family: var(--paragraphFont);
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr;
+
+    grid-template-areas: 'nav main main main main main';
+}
+
+.navigation { 
+    position: relative;
+    grid-area: nav;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    background: var(--white);
+}
+
+.navigation__logo {
+    padding: 32px;
+}
+
+.navigation_ul {
+    margin-top: 80px;
+    width: 100%;
+}
+
+.navigation_link {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 60px;
+    cursor: pointer;
+
+    padding: 32px;
+}
+
+.navigation_link:hover {
+    background: var(--white-2);
+}
+
+.navigation_link__quantity { 
+    height: 96px;
+
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.navigation_link__quantity input {
+    height: 40px;
+}
+
+
+.submenu {
+    position: absolute;
+    background: var(--white);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    height: 100%;
+    width: 0%;
+    left: 100%;
+    
+
+    overflow: hidden;
+    z-index: 2;
+
+    transition: width 0.3s;
+    box-shadow: 21px 0px 33px -11px rgba(69, 69, 69, 0.21);
+}
+
+.submenu__active {
+
+    padding: 32px;
+    width: 100%;
+}
+
+.submenu__content {
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.1s;
+    transition-delay: 0.3s;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+}
+
+.submenu__active > .submenu__content {
+    opacity: 1;
+}
+
+#requiredOptions  {
+
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+.main {
+    grid-area: main;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: var(--white-2);
+}
+
+
+.main_content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+
+.main_content_card {
+    position: relative;
+
+    padding: 32px;
+
+    width: 100%;
+    transition: transform 0.1s;
+
+    display: flex;
+
+    background: var(--white);
+
+}
+
+.main_content_card + .main_content_card {
+    margin-top: 16px;
+}
+
+.main_content_card::after {
+    content: url('../assets/chevron.svg');
+    position: absolute;
+
+    width: 20px;
+    right: 32px;
+    top: calc(50px - (25px / 2));
+}
+
+.main_content_card:hover {
+    transform: translateX(16px);
+}
+
+.main_content_card_id {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--purple);
+
+    margin-right: 16px;
+}
+
+.main_content_card_id p {
+    font-weight: bold;
+    color: #fff;
+}
+
+.main_content_card_info {
+    display: flex;
+    flex-direction: column;
+}
+ 
+.main_pagination {
+    cursor: pointer;
+    
+    width: 180px;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main_pagination__chevron {
+    width: 50px;
+    height: auto;
+}
+
+.main_pagination__left > .main_pagination__chevron {
+    transform: scaleX(-1);
+}
+
+.main_pagination:hover {
+    background: linear-gradient(-90deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.main_pagination__left:hover {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
+}

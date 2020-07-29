@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LiveUniversity - Gerador de Perguntas</title>
+    <link rel="stylesheet" href="/public/css/styles.css">
+    <link rel="shortcut icon" href="/public/assets/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+
+    <nav class="navigation">
+
+        <img class="navigation__logo" src="/public/assets/liveu.png" alt="Live University Logo">
+
+        <ul class="navigation_ul">
+            <li class="navigation_link navigation_link__expand">Expand submenu</li>
+            <li class="navigation_link navigation_link__quantity">
+                <form id="myForm" onsubmit="event.preventDefault()">
+                    <label for="number">Item quantity:</label>
+                    <input id="number" value="<%- quantity -%>" onsubmit="event.preventDefault()" type="number">
+                </form>
+            </li>
+        </ul>
+
+        <aside class="submenu">
+            <div class="submenu__content">
+                <div>
+                    <h2>Requested features</h2>
+                    <form id="requiredOptions">
+                        <label for="typeOfCard">Pick a list type:</label>
+                        <select name="typeOfCard" id="typeOfCard">
+                            <option value="A" <%- type === 'A' ? 'selected' : '' -%>>Type A</option>
+                            <option value="B" <%- type === 'B' ? 'selected' : '' -%>>Type B</option>
+                        </select>
+                    </form>
+                </div>
+
+                <div>
+                    <h2>Optional features</h2>
+                    <form>
+                        <label for="pageNumber">Current page:</label>
+                        <input type="number" id="pageNumber" disabled value="<%- page -%>">
+                    </form>
+                </div>
+
+            </div>
+        </aside>
+    </nav>
+
+    <main class="main">
+
+
+        <%- include('cards.ejs',  { quantity, type } );  -%>
+
+
+    </main>
+    <script src="/public/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<% let amountOfCards = []
+    for (var i=0; i < quantity; i++) {
+        amountOfCards.push(i);
+    }
+
+    console.log(amountOfCards);
+%>
+<% 
+
+let currentPage = page
+let rowsPerPage = 3 
+
+let start = rowsPerPage * currentPage;
+let end = start + rowsPerPage;
+let paginatedItems = amountOfCards.slice(start, end);
+
+%>
+
+<div class="main_pagination main_pagination__left"><img class="main_pagination__chevron"
+        src="/public/assets/chevron.svg" alt="Previous page"></div>
+
+<div class="main_content">
+
+    <% for(var i = 0; i < paginatedItems.length; i++) {
+    let item = paginatedItems[i];
+    %>
+
+    <div class="main_content_card">
+        <div class="main_content_card_id">
+            <p><%- item + 1 -%></p>
+        </div>
+        <div class="main_content_card_info">
+            <span>This is Item<strong></strong> <%- type -%><%- item + 1 -%></span>
+            <small>Item: <%- (item+1) -%> of <%- amountOfCards.length -%></small>
+        </div>
+    </div>
+
+    <% } %>
+
+</div>
+
+<div class="main_pagination main_pagination__right"><img class="main_pagination__chevron"
+        src="/public/assets/chevron.svg" alt="Next page"></div>
+
+<script src="/public/js/pagination.js"></script>
