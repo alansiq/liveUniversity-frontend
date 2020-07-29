@@ -16,4 +16,4 @@ app.get('/', (request, response) => {
 })
 
 
-app.listen(3333);
+app.listen(3333, () => console.log('Listening on localhost:3333 - I hope you enjoy my application'));
