@@ -20,14 +20,6 @@
             <li class="navigation_link navigation_link__quantity">
                 <form id="myForm" onsubmit="event.preventDefault()">
                     <label for="number">Item quantity:</label>
-                    <%  let alert;
-                        function toggleAlert(){
-                            console.log('toggle alert');
-                            console.log('toggle alert');
-                            console.log('toggle alert');
-                            console.log('toggle alert');
-                        }
-                    %>
                     <input id="number"class="<%- alert ? 'error' : '' -%>" value="<%- quantity -%>" onsubmit="event.preventDefault()" type="number">
                 </form>
             </li>
@@ -41,7 +33,6 @@
                         <label for="typeOfCard">Pick a list type:</label>
                         
                         <select 
-                            onchange="<%-toggleAlert-%>"
                             name="typeOfCard"
                             id="typeOfCard">
                             <option value="A" <%- type === 'A' ? 'selected' : '' -%>>Type A</option>
