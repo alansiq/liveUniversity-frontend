@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const app = express();
 
+const PORT = process.env.PORT || 8080
 
 app.use('/public',express.static(path.join(__dirname,'static')));
 app.set('view engine','ejs');
@@ -15,4 +16,4 @@ app.get('/', (request, response) => {
 })
 
 
-app.listen(8080, () => console.log('Listening on 8080 - I hope you enjoy my application'));
+app.listen(process.env.PORT || 8080);

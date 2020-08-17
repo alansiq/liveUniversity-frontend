@@ -62,6 +62,7 @@ h2 + form {
     border: red 2px solid;
 }
 
+
 .navigation { 
     position: relative;
     grid-area: nav;
